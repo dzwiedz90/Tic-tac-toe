@@ -28,17 +28,7 @@ def main():
 			break
 		elif choose == '2':
 			sys.exit(0)
-
-	os.system('cls')
-	print('##############################################################################################')
-	print('##################################        TIC TAC TOE       ##################################')
-	print('##############################################################################################')
-	print(' ')
-	global players = ['a','b']
-	players[0] = input('Player 1 what is your name?: ')
-	players[1] = input('Player 2 what is your name?: ')
-
-def playerName()
-	return players
+	
+	
 	
 main()
