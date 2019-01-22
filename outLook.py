@@ -12,40 +12,46 @@ input('Press enter to continue...')
 gameOver = False
 
 def hasWon():
-	if(((f[0]=='X') and (f[3]=='X') and (f[6]=='X')) or ((f[1]=='X') and (f[4]=='X') and (f[7]=='X')) or ((f[2]=='X') and (f[5]=='X') and (f[8]=='X'))):
-		gameOver = True
+	if (((f[0] == 'X') and (f[3] == 'X') and (f[6]=='X')) or ((f[1] == 'X') and (f[4] == 'X') and (f[7]=='X')) or ((f[2] == 'X') and (f[5] == 'X') and (f[8]=='X'))):
 		print('Game over! '+players[0]+' won!')
-	elif((f[0]=='X' and f[1]=='X' and f[2]=='X') or (f[3]=='X' and f[4]=='X' and f[5]=='X') or (f[6]=='X' and f[7]=='X' and f[8]=='X')):
-		gameOver = True
+		return True
+	elif (((f[0] == 'X') and (f[1] == 'X') and (f[2]=='X')) or ((f[3] == 'X') and (f[4] == 'X') and (f[5]=='X')) or ((f[6] == 'X') and (f[7] == 'X') and (f[8]=='X'))):
 		print('Game over! '+players[0]+' won!')
-	elif((f[0]=='X' and f[4]=='X' and f[8]=='X') or (f[2]=='X' and f[4]=='X' and f[6]=='X')):
-		gameOver = True
+		return True
+	elif (((f[0] == 'X') and (f[4] == 'X') and (f[8]=='X')) or ((f[2] == 'X') and (f[4] == 'X') and (f[6]=='X'))):
 		print('Game over! '+players[0]+' won!')
-	elif((f[0]=='O' and f[3]=='O' and f[6]=='O') or (f[1]=='O' and f[4]=='O' and f[7]=='O') or (f[2]=='O' and f[5]=='O' and f[8]=='O')):
-		gameOver = True
+		return True
+	elif (((f[0] == 'O') and (f[3] == 'O') and (f[6]=='O')) or ((f[1] == 'O') and (f[4] == 'O') and (f[7]=='O')) or ((f[2] == 'O') and (f[5] == 'O') and (f[8]=='O'))):
 		print('Game over! '+players[1]+' won!')
-	elif((f[0]=='O' and f[1]=='O' and f[2]=='O') or (f[3]=='O' and f[4]=='O' and f[5]=='O') or (f[6]=='O' and f[7]=='O' and f[8]=='O')):
-		gameOver = True
+		return True
+	elif (((f[0] == 'O') and (f[1] == 'O') and (f[2]=='O')) or ((f[3] == 'O') and (f[4] == 'O') and (f[5]=='O')) or ((f[6] == 'O') and (f[7] == 'O') and (f[8]=='O'))):
 		print('Game over! '+players[1]+' won!')
-	elif((f[0]=='O' and f[4]=='O' and f[8]=='O') or (f[2]=='O' and f[4]=='O' and f[6]=='O')):
-		gameOver = True
+		return True
+	elif (((f[0] == 'O') and (f[4] == 'O') and (f[8]=='O')) or ((f[2] == 'O') and (f[4] == 'O') and (f[6]=='O'))):
 		print('Game over! '+players[1]+' won!')
+		return True
 		
 	
 def fillField():
 	playerNumber = 0
 	while gameOver == False:
-		hasWon()
 		gameField()
+		check = hasWon()
+		if check == True: break
 		playerNumber = playerNumber
 		playerMark = ''
 		if playerNumber == 0: playerMark = 'X'
 		elif playerNumber == 1: playerMark = 'O'
 		choose = input(players[playerNumber]+': '+playerMark+', your move! Which field?: ')
+		if 'X' in f[int(choose)]:
+			input('You entered existing field. Press enter to continue...')
+			continue
+		elif 'O' in f[int(choose)]:
+			input('You entered existing field. Press enter to continue...')
+			continue
 		f[int(choose)] = playerMark
 		playerNumber += 1
 		if playerNumber>1: playerNumber = 0
-		print(f)
 
 def gameField():
 	os.system('cls')
