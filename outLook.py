@@ -14,21 +14,27 @@ gameOver = False
 def hasWon():
 	if (((f[0] == 'X') and (f[3] == 'X') and (f[6]=='X')) or ((f[1] == 'X') and (f[4] == 'X') and (f[7]=='X')) or ((f[2] == 'X') and (f[5] == 'X') and (f[8]=='X'))):
 		print('Game over! '+players[0]+' won!')
+		input('Press enter to continue...')
 		return True
 	elif (((f[0] == 'X') and (f[1] == 'X') and (f[2]=='X')) or ((f[3] == 'X') and (f[4] == 'X') and (f[5]=='X')) or ((f[6] == 'X') and (f[7] == 'X') and (f[8]=='X'))):
 		print('Game over! '+players[0]+' won!')
+		input('Press enter to continue...')
 		return True
 	elif (((f[0] == 'X') and (f[4] == 'X') and (f[8]=='X')) or ((f[2] == 'X') and (f[4] == 'X') and (f[6]=='X'))):
 		print('Game over! '+players[0]+' won!')
+		input('Press enter to continue...')
 		return True
 	elif (((f[0] == 'O') and (f[3] == 'O') and (f[6]=='O')) or ((f[1] == 'O') and (f[4] == 'O') and (f[7]=='O')) or ((f[2] == 'O') and (f[5] == 'O') and (f[8]=='O'))):
 		print('Game over! '+players[1]+' won!')
+		input('Press enter to continue...')
 		return True
 	elif (((f[0] == 'O') and (f[1] == 'O') and (f[2]=='O')) or ((f[3] == 'O') and (f[4] == 'O') and (f[5]=='O')) or ((f[6] == 'O') and (f[7] == 'O') and (f[8]=='O'))):
 		print('Game over! '+players[1]+' won!')
+		input('Press enter to continue...')
 		return True
 	elif (((f[0] == 'O') and (f[4] == 'O') and (f[8]=='O')) or ((f[2] == 'O') and (f[4] == 'O') and (f[6]=='O'))):
 		print('Game over! '+players[1]+' won!')
+		input('Press enter to continue...')
 		return True
 		
 	
