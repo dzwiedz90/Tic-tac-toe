@@ -1,5 +1,11 @@
 import os
 import players
+import tictactoeMainMenu
+
+
+
+tictactoeMainMenu.main()
+
 
 #przerobić na słownik
 f = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']

@@ -28,7 +28,3 @@ def main():
 			break
 		elif choose == '2':
 			sys.exit(0)
-	
-	
-	
-main()
